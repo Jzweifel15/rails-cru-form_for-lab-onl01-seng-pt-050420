@@ -20,8 +20,8 @@ class SongsController < ApplicationController
   
   private 
   
-  def _params(*args)
-    params.require(:model).permit(*args)
+  def song_params(*args)
+    params.require(:song).permit(*args)
   end
 
 end
