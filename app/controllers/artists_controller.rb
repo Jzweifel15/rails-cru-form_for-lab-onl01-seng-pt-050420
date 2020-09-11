@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
 
-  def index
+  def artists
   end 
   
   def show 
@@ -20,8 +20,8 @@ class ArtistsController < ApplicationController
   
   private 
   
-  def _params(*args)
-    params.require(:model).permit(*args)
+  def artist_params(*args)
+    params.require(:artist).permit(*args)
   end
 
 end
