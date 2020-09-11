@@ -1,25 +1,34 @@
 class GenresController < ApplicationController
 
   #def index
-  #end 
-  
-  def show 
-  end 
-  
-  def new 
-  end 
-  
+  #  @genres = Genre.all
+  #end
+
+  def show
+    @genre = Genre.find(params[:id])
+  end
+
+  def new
+    @genre = Genre.new
+  end
+
   def create
-  end 
-  
+    @genre = Genre.create(genre_params(:name))
+    redirect_to genre_path(@genre)
+  end
+
   def update
-  end 
-  
-  def edit 
-  end 
-  
-  private 
-  
+    @genre = Genre.find(params[:id])
+    @genre.update(genre_params(:name))
+    redirect_to genre_path(@genre)
+  end
+
+  def edit
+    @genre = Genre.find(params[:id])
+  end
+
+  private
+
   def genre_params(*args)
     params.require(:genre).permit(*args)
   end
