@@ -1,7 +1,7 @@
 class GenresController < ApplicationController
 
-  def index
-  end 
+  #def index
+  #end 
   
   def show 
   end 
@@ -20,8 +20,8 @@ class GenresController < ApplicationController
   
   private 
   
-  def _params(*args)
-    params.require(:model).permit(*args)
+  def genre_params(*args)
+    params.require(:genre).permit(*args)
   end
 
 end
